@@ -17,8 +17,8 @@ class ContentStartFull extends State<ContentStart> {
         home: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-              Color.fromRGBO(30, 10, 200, 1),
-              Color.fromRGBO(90, 10, 200, 1)
+              Color.fromRGBO(40, 0, 200, 1),
+              Color.fromRGBO(30, 0, 250, 1)
             ])),
             child: Scaffold(
                 backgroundColor: Color.fromRGBO(0, 0, 0, .0),
@@ -28,7 +28,7 @@ class ContentStartFull extends State<ContentStart> {
                     this.descriptionStart(),
                     SizedBox(height: 30),
                     Opacity(
-                      opacity: .4,
+                      opacity: .3,
                       child: this.conditions(),
                     ),
                     this.loadingIndicator(context),
@@ -40,7 +40,7 @@ class ContentStartFull extends State<ContentStart> {
     return Container(
         padding: EdgeInsets.only(left: 0, right: 0),
         decoration: BoxDecoration(
-            color: Color.fromRGBO(0, 0, 200, .2),
+            // color: Color.fromRGBO(0, 0, 200, .2),
             borderRadius: BorderRadius.circular(15)),
         width: 300,
         height: 50,
@@ -51,6 +51,7 @@ class ContentStartFull extends State<ContentStart> {
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontFamily: 'ubuntu',
+                    fontWeight: FontWeight.bold,
                     fontSize: 13)),
             onChanged: (e) {}));
   }
@@ -88,13 +89,17 @@ class ContentStartFull extends State<ContentStart> {
           margin: EdgeInsets.only(top: 10),
           // decoration
           decoration: BoxDecoration(
-              color: Color.fromRGBO(10, 10, 200, 1),
+              color: Color.fromRGBO(10, 10, 200, .5),
               borderRadius: BorderRadius.circular(8)),
           // buttons
           child: TextButton(
             style: TextButton.styleFrom(padding: EdgeInsets.all(20)),
-            child: Text("START",
-                style: TextStyle(color: Colors.white, fontSize: 13)),
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text("START",
+                  style: TextStyle(color: Colors.white, fontSize: 13)),
+              SizedBox(width: 4),
+              Icon(Icons.arrow_forward, size: 20, color: Colors.white)
+            ]),
             // click on button
             onPressed: () {
               setState(() {
