@@ -18,7 +18,7 @@ class ContentStartFull extends State<ContentStart> {
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
               Color.fromRGBO(30, 10, 200, 1),
-              Color.fromRGBO(70, 10, 200, 1)
+              Color.fromRGBO(90, 10, 200, 1)
             ])),
             child: Scaffold(
                 backgroundColor: Color.fromRGBO(0, 0, 0, .0),
@@ -26,10 +26,33 @@ class ContentStartFull extends State<ContentStart> {
                   children: [
                     this.containImage(),
                     this.descriptionStart(),
-                    // this.button(),
-                    this.loadingIndicator(context)
+                    SizedBox(height: 30),
+                    Opacity(
+                      opacity: .4,
+                      child: this.conditions(),
+                    ),
+                    this.loadingIndicator(context),
                   ],
                 ))));
+  }
+
+  Widget conditions() {
+    return Container(
+        padding: EdgeInsets.only(left: 0, right: 0),
+        decoration: BoxDecoration(
+            color: Color.fromRGBO(0, 0, 200, .2),
+            borderRadius: BorderRadius.circular(15)),
+        width: 300,
+        height: 50,
+        // margin: EdgeInsets.only(left: 35, right: 30),
+        child: CheckboxListTile(
+            value: true,
+            title: Text("Uses and conditions",
+                style: TextStyle(
+                    color: Colors.grey[600],
+                    fontFamily: 'ubuntu',
+                    fontSize: 13)),
+            onChanged: (e) {}));
   }
 
   Widget loadingIndicator(context) {
@@ -39,7 +62,7 @@ class ContentStartFull extends State<ContentStart> {
           child: ZoomIn(
               child: CircularProgressIndicator(
                   backgroundColor: Colors.blue[900],
-                  strokeWidth: 2.1,
+                  strokeWidth: 3.1,
                   color: Colors.white)));
 
     return this.button(context);
@@ -61,7 +84,7 @@ class ContentStartFull extends State<ContentStart> {
       borderRadius: BorderRadius.circular(8),
       child: Container(
           // widths
-          width: 240,
+          width: 300,
           margin: EdgeInsets.only(top: 10),
           // decoration
           decoration: BoxDecoration(
@@ -96,7 +119,7 @@ class ContentStartFull extends State<ContentStart> {
             child: Text("Start scanning your mobile for errors and hidden junk",
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 13,
+                    fontSize: 14,
                     color: Colors.grey[400]))));
   }
 
