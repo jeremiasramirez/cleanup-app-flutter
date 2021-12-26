@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:cleanappflutter/pages/Home/HomePage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class SlidePageful extends State<SlidePage> {
             body: PageView(
           dragStartBehavior: DragStartBehavior.start,
           scrollDirection: Axis.vertical,
-          children: [this.elementForEachPage()],
+          children: [this.elementForEachPage(), HomePage()],
         )));
   }
 

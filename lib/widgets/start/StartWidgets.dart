@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:cleanappflutter/pages/Home/HomePage.dart';
+// import 'package:cleanappflutter/pages/Home/HomePage.dart';
 import 'package:cleanappflutter/pages/slides/SlidePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -154,6 +154,7 @@ class ContentStartFull extends State<ContentStart> {
                 child: Transform.scale(
                     scale: .7,
                     child: Image(
+                        color: Colors.grey[400],
                         image: AssetImage("assets/images/boost.png"),
                         width: 120.0)))));
   }
