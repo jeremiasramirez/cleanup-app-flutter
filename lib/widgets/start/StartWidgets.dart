@@ -49,7 +49,7 @@ class ContentStartFull extends State<ContentStart> {
             value: true,
             title: Text("Uses and conditions",
                 style: TextStyle(
-                    color: Colors.grey[600],
+                    color: Colors.grey[200],
                     fontFamily: 'ubuntu',
                     fontWeight: FontWeight.bold,
                     fontSize: 13)),
@@ -95,8 +95,12 @@ class ContentStartFull extends State<ContentStart> {
           child: TextButton(
             style: TextButton.styleFrom(padding: EdgeInsets.all(20)),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("START",
-                  style: TextStyle(color: Colors.white, fontSize: 13)),
+              Text("START CLEANUP MASTER",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                      fontFamily: 'ubuntu',
+                      fontSize: 13)),
               SizedBox(width: 4),
               Icon(Icons.arrow_forward, size: 20, color: Colors.white)
             ]),
